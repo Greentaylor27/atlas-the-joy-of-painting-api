@@ -6,3 +6,4 @@ node_modules
 CSVs/cleaned_colors.csv
 CSVs/cleaned_episodes.csv
 CSVs/cleaned_subject.csv
+CSVs/EpisodeColor.csv
