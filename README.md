@@ -1,36 +1,77 @@
-# Atlas-the-joy-of-painting-api
+# 🎨 Atlas: The Joy of Painting API
+This project is an exploration of ETL (Extract, Transform, Load) processes, data modeling, and backend architecture. It’s centered around building an API to organize and explore metadata from Bob Ross’s The Joy of Painting episodes.
 
-learning ETL (Extract, Transform, Load)
+Though the project is unfinished, it taught me a lot about data pipelines, database design, and pivoting architectures mid-development.
 
+## 🧩 What This Project Does
+-Extracts data from multiple CSV files
 
-## ERD model
+-Transforms and cleans that data into a normalized structure
 
-https://imgur.com/a/rDsWYi7
+-(Intended to) Load data into a PostgreSQL database
 
-## Instructions
+-Provides a backend (in progress) for filtering and querying the dataset
 
-To explain how to work this and what the intention was since I never finished
+## 🗺 ERD (Entity Relationship Diagram)
+Here’s the [ERD diagram](./screenshots/ERD for Joys of painting project - Imgur.png) I created to guide the relational structure of the data.
 
-1. run Cleanup.py (this is the extract step where I pull all the data I need out of each of the CSVs)
+## ⚙️ Project Steps
+These scripts represent the steps of the ETL process:
 
-2. Run Connect.py (This was intended to be the point at which we make the junction table in a CSV format to have a hard copy as well as to the database)
+1. Cleanup.py
 
-this is where I explain the intention:
+- Extracts and transforms raw CSV data
 
-3. Run Import.py (This step was intended to send all the CSVs to the database (PostgreSQL) I ended up changing architectures mid way through the project)
+- Normalizes the structure
 
-4. Run all the connecting backend to be able to filter and post what you need
-## Authors
+- Outputs cleaned CSVs
 
-- [Taylor Green](https://www.github.com/Greentaylor27)
+2. Connect.py
 
+- Builds junction tables for many-to-many relationships
 
-## Pitfalls
+- Creates intermediate CSVs to map associations
 
-So I feel this section is needed as this project never got finished.
+3. Import.py (planned but incomplete)
 
-1. Sitting down to draft the ERD diagram for how the tables will layout
+- Intended to import all CSVs into a PostgreSQL database
 
-2. How to connect the tables. (purpose of this project really)
+- Switched architectures mid-project and this step was never finalized
 
-3. Picking which database archietecture to use (I ended up changing about half way through)
+4. API backend (partially implemented)
+
+- Planned to use Node.js/Express or Python to serve a RESTful API
+
+- Filter and return painting metadata based on user queries
+
+## 🚧 Challenges & Roadblocks
+This project didn’t make it to full deployment, but here's where I hit friction (and what I learned):
+
+- 🧱 Database architecture
+Originally planned for PostgreSQL, then reconsidered for MongoDB midstream — a reminder to plan ahead!
+
+- 📊 Entity design
+Designing the ERD took serious thought and revealed how tricky many-to-many relationships can be in normalized databases.
+
+- 🔁 Data pipeline complexity
+Juggling CSVs, transformation logic, and relational mappings was a great intro to real-world ETL headaches.
+
+## 🙋‍♂️ About the Developer
+Hey, I’m Taylor Green – backend-focused full-stack developer with a love for clean data, great documentation, and miniatures on the weekend.
+
+🔗 Connect with me:
+
+[GitHub](https://github.com/Greentaylor27)
+
+[LinkedIn](https://www.linkedin.com/in/greentaylor27/)
+
+[Portfolio](https://github.com/Greentaylor27?tab=repositories)
+
+## 🧠 Future Plans
+
+- Complete the import step for PostgreSQL or switch fully to a NoSQL schema
+
+- Finish the Express.js backend and expose filtering endpoints
+
+- Deploy the API and build a simple frontend to explore the dataset
+
